@@ -7,5 +7,5 @@ class AbstractCommandHandler:
 
     @staticmethod
     @abstractmethod
-    async def process(callback_query: types.CallbackQuery, *args, **kwargs):
+    async def process(message: types.Message, *args, **kwargs):
         raise NotImplementedError()
