@@ -1,1 +1,1 @@
-from .SubscribeCallbackHandler import SubscribeCallbackHandler
+from .ActivateUserCallbackHandler import ActivateUserCallbackHandler

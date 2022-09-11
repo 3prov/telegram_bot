@@ -1,7 +1,7 @@
 from .StartCommandHandler import StartCommandHandler
-from .SubscribeCommandHandler import SubscribeCommandHandler
-from .UnsubscribeCommandHandler import UnsubscribeCommandHandler
+from .ActivateUserCommandHandler import ActivateUserCommandHandler
+from .DeactivateUserCommandHandler import DeactivateUserCommandHandler
 
 __all__ = [
-    'StartCommandHandler', 'SubscribeCommandHandler', 'UnsubscribeCommandHandler',
+    'StartCommandHandler', 'ActivateUserCommandHandler', 'DeactivateUserCommandHandler',
 ]

@@ -1,3 +1,4 @@
+from aiogram import types
 from aiogram.utils import markdown
 
 import app
@@ -8,9 +9,9 @@ from app.keyboards.start import StartInlineKeyboard
 class StartMenu(AbstractMenu):
 
     @staticmethod
-    async def show(chat_id: int) -> None:
+    async def show(message: types.Message) -> None:
         await app.bot.send_message(
-            chat_id,
+            message.chat.id,
             markdown.text(
                 markdown.text('Привет!'),
                 markdown.text('3проверочки — проект, который поможет тебе бесплатно подготовиться к ЕГЭ по русскому языку. Ты научишься писать сочинения на максимальный балл, используя эффективный метод обучения, основанный на взаимных проверках.'),

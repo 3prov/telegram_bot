@@ -5,17 +5,17 @@ import app
 from app.menus.AbstractMenu import AbstractMenu
 
 
-class UnsubscribeMenu(AbstractMenu):
+class DeactivateMenu(AbstractMenu):
 
     @staticmethod
-    async def show(chat_id: int) -> None:
+    async def show(message: types.Message) -> None:
 
         await app.bot.send_message(
-            chat_id,
+            message.chat.id,
             markdown.text(
                 markdown.text('Ты отказался от участия в проекте. Теперь тебе не будут приходить уведомления.'),
                 markdown.text(),
-                markdown.text('Возобновить участие: /subscribe'),
+                markdown.text('Возобновить участие: /activate'),
                 sep='\n',
             ),
             reply_markup=types.ReplyKeyboardRemove(),

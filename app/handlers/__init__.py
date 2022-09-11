@@ -9,17 +9,17 @@ __all__ = ['AbstractCommandHandler', 'AbstractCallbackHandler']
 
 
 def register_handlers(dispatcher: Dispatcher) -> None:
-    from .commands.general import StartCommandHandler, SubscribeCommandHandler, UnsubscribeCommandHandler
-    from .callbacks import SubscribeCallbackHandler
+    from .commands.general import StartCommandHandler, ActivateUserCommandHandler, DeactivateUserCommandHandler
+    from .callbacks import ActivateUserCallbackHandler
 
     # General commands
     _register_message_handler(dispatcher, StartCommandHandler, commands=['start'])
-    _register_message_handler(dispatcher, SubscribeCommandHandler, commands=['subscribe'])
-    _register_message_handler(dispatcher, UnsubscribeCommandHandler, commands=['unsubscribe'])
+    _register_message_handler(dispatcher, ActivateUserCommandHandler, commands=['activate'])
+    _register_message_handler(dispatcher, DeactivateUserCommandHandler, commands=['deactivate'])
 
     # Callbacks
     dispatcher.register_callback_query_handler(
-        SubscribeCallbackHandler.process, lambda c: c.data == 'callback_query_start'
+        ActivateUserCallbackHandler.process, lambda c: c.data == 'callback_query_activate'
     )
 
 

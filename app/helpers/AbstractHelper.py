@@ -1,11 +1,9 @@
 from abc import abstractmethod
 
-from aiogram import types
 
-
-class AbstractMenu:
+class AbstractHelper:
 
     @staticmethod
     @abstractmethod
-    async def show(message: types.Message) -> None:
+    async def process(*args, **kwargs) -> None:
         raise NotImplementedError

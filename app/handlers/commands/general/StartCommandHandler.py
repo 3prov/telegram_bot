@@ -8,4 +8,4 @@ class StartCommandHandler(AbstractCommandHandler):
 
     @staticmethod
     async def process(message: types.Message, *args, **kwargs) -> None:
-        await StartMenu.show(chat_id=message.chat.id)
+        await StartMenu.show(message)

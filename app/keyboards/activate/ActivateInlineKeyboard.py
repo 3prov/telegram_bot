@@ -3,7 +3,7 @@ from aiogram import types
 from app.keyboards import AbstractInlineKeyboard
 
 
-class SubscribeInlineKeyboard(AbstractInlineKeyboard):
+class ActivateInlineKeyboard(AbstractInlineKeyboard):
 
     @staticmethod
     async def show() -> types.InlineKeyboardMarkup:
